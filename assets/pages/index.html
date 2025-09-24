@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/styles/style.css">
+    <script src="/assets/scripts/script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form_card">
+            <div class="form_header">
+                <h2 class="form_title">créez votre compte</h2>
+                <p class="form_subtitle">completez les étapes suivantes</p>
+            </div>
+            <div class="progress_container">
+                <div class="steps_indicator">
+                    <div class="step_item">
+                        <div class="step_number activeColor">1</div>
+                        <div class="step_part">profile</div>
+                    </div>
+                    <div class="step_item">
+                        <div class="step_number">2</div>
+                        <div class="step_part">contact</div>
+                    </div>
+                    <div class="step_item">
+                        <div class="step_number">3</div>
+                        <div class="step_part">password</div>
+                    </div>
+                    <div class="step_item">
+                        <div class="step_number">4</div>
+                        <div class="step_part">confirmation</div>
+                    </div>
+                </div>
+                <div class="progress_bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+            <form id="formMultiSteps" novalidate>
+                <div class="form_step active">
+                    <div class="input_group">
+                        <label for="name">Nom complet :</label>
+                        <input id="name" placeholder="Entrez votre nom complet" required pattern="^[a-z0-9_-]{3,16}$">
+                        <div class="err_msg"></div>
+                    </div>
+                    <div class="form_navigation">
+                        <button type="button" class="btn btn_next">Next</button>
+                    </div>
+                </div>
+                <div class="form_step">
+                    <div class="input_group">
+                        <label for="email">Adress email :</label>
+                        <input id="email" placeholder="example@gamil.com" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
+                        <div class="err_msg"></div>
+                    </div>
+                    <div class="form_navigation">
+                        <button type="button" class="btn btn_prev">Back</button>
+                        <button type="button" class="btn btn_next">Next</button>
+                    </div>
+                </div>
+                <div class="form_step">
+                    <div class="input_group">
+                        <label for="password">Mot de pass :</label>
+                        <div class="password_container">
+                            <input id="password" placeholder="Minimum 8 caractéres" required
+                                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$">
+                            <button type="button" class="toggle_password" aria-label="Affichez le mot de pass">
+                                <svg fill="#000000" width="24" height="24" viewBox="0 -1.5 35 35" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M17.162 4.341c-10.562 0-17.162 11.659-17.162 11.659s6.537 11.659 17.162 11.659c9.938 0 17.481-11.659 17.481-11.659s-7.481-11.659-17.481-11.659zM17.256 21.251c-2.894 0-5.238-2.345-5.238-5.238s2.345-5.239 5.238-5.239 5.239 2.346 5.239 5.239-2.346 5.238-5.239 5.238zM17.288 13.394c-1.44 0-2.607 1.168-2.607 2.607s1.167 2.607 2.607 2.607 2.607-1.167 2.607-2.607c0.001-1.439-1.166-2.607-2.607-2.607z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="password_strength">
+                            <div class="strength_bar"></div>
+                            <div class="strength_level"></div>
+                        </div>
+                        <div class="err_msg"></div>
+                    </div>
+                    <div class="form_navigation">
+                        <button type="button" class="btn btn_prev">Back</button>
+                        <button type="button" class="btn btn_next">next</button>
+                    </div>
+                </div>
+                <div class="form_step">
+                    <div class="input_group">
+                        <label for="confirm_password">confirmez le mot de pass</label>
+                        <div class="password_container">
+                            <input id="confirm_password" placeholder="Retapez votre mot de pass" required
+                                pattern="(?=(.*[0-9]))((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.{8,}$">
+                            <button type="button" class="toggle_password" aria-label="Affichez le mot de pass">
+                                <svg fill="#000000" width="24" height="24" viewBox="0 -1.5 35 35" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M17.162 4.341c-10.562 0-17.162 11.659-17.162 11.659s6.537 11.659 17.162 11.659c9.938 0 17.481-11.659 17.481-11.659s-7.481-11.659-17.481-11.659zM17.256 21.251c-2.894 0-5.238-2.345-5.238-5.238s2.345-5.239 5.238-5.239 5.239 2.346 5.239 5.239-2.346 5.238-5.239 5.238zM17.288 13.394c-1.44 0-2.607 1.168-2.607 2.607s1.167 2.607 2.607 2.607 2.607-1.167 2.607-2.607c0.001-1.439-1.166-2.607-2.607-2.607z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="err_msg"></div>
+                    </div>
+                    <div class="form_navigation">
+                        <button type="button" class="btn btn_prev">Back</button>
+                        <button type="button" class="btn singUp">Créez mon compte</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="box_alert"  style="display: none;">
+            <p class="pres">inscription reussi</p>
+        </div>
+    </div>
+</body>
+
+</html>
